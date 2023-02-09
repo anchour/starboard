@@ -1,0 +1,26 @@
+{
+  "name": "button",
+  "version": "0.0.0",
+  "description": "Button component",
+  "author": "Matt Robitaille <matt@anchour.com>",
+  "homepage": "https://github.com/anchour/starboard#readme",
+  "license": "ISC",
+  "main": "lib/button.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchour/starboard.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/button.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/anchour/starboard/issues"
+  }
+}
