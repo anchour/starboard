@@ -1,12 +1,21 @@
 {
-  "name": "starboard",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@anchour/starboard",
+  "version": "0.0.1",
+  "description": "Common components used in Anchour projects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Anchour",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchour/starboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anchour/starboard/issues"
+  },
+  "homepage": "https://github.com/anchour/starboard#readme"
 }
