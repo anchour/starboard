@@ -1,5 +1,5 @@
 {
-  "name": "presets",
+  "name": "@anchour/starboard-components",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.3",
+  "devDependencies": {
     "tailwindcss": "^3.2.7"
   }
 }
