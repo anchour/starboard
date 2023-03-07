@@ -1,0 +1,248 @@
+/** placeholder at this time */
+
+.btn {
+  background-color: theme(colors.primary.main);
+  border: 1px solid theme(colors.primary.main);
+  border-radius: var(--rounded-full);
+  color: theme(colors.primary.contrast-text);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5625rem 1.5625rem;
+  position: relative;
+  transition: 0.25s ease;
+  text-align: center;
+  white-space: nowrap;
+
+  &:disabled {
+    background-color: theme(colors.action.disabled-background);
+    border: 1px solid theme(colors.action.disabled-background);
+    color: theme(colors.action.disabled);
+    cursor: not-allowed;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:hover {
+    color: theme(textColor.primary-dark);
+    background-color: theme(colors.grey.800);
+  }
+
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring;
+  }
+}
+
+.btn--primary-dark {
+  background-color: theme(colors.white);
+  border-color: theme(colors.white);
+  color: theme(colors.black);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.100);
+    border-color: theme(colors.grey.100);
+    color: theme(colors.black);
+  }
+
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
+
+.btn__text {
+  display: inline-block;
+  position: relative;
+}
+
+/* Button sizes*/
+.btn--large {
+  font-size: 1.0625rem;
+}
+
+.btn--small {
+  font-size: 0.8125rem;
+  padding: 7px theme(spacing.2);
+}
+
+/* Variants*/
+.btn--secondary,
+.btn--secondary-dark {
+  background-color: theme(colors.secondary.main);
+  color: theme(colors.secondary.contrast-text);
+  border-color: theme(colors.secondary.main);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.secondary.light);
+    color: theme(colors.secondary.contrast-text);
+    border-color: theme(colors.secondary.light);
+  }
+}
+
+.btn--secondary-dark {
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
+
+.btn--inherit {
+  background-color: theme(colors.grey.100);
+  border-color: theme(colors.grey.100);
+  color: theme(textColor.primary.DEFAULT);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.200);
+    color: theme(textColor.primary.DEFAULT);
+    border-color: theme(colors.grey.200);
+  }
+}
+
+.btn--inherit-dark {
+  background-color: theme(colors.grey.900);
+  border-color: theme(colors.grey.900);
+  color: theme(colors.white);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.700);
+    border-color: theme(colors.grey.700);
+  }
+
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
+
+.btn--outlined {
+  background-color: transparent;
+  border-color: theme(textColor.primary.DEFAULT);
+  color: theme(textColor.primary.DEFAULT);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.100);
+    color: theme(textColor.primary.DEFAULT);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: theme(colors.action.disabled);
+    border-color: theme(colors.action.disabled);
+  }
+}
+
+.btn--outlined-dark {
+  border-color: theme(colors.white);
+  color: theme(colors.white);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.800);
+    border-color: theme(colors.white);
+  }
+
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
+
+.btn--text {
+  background-color: transparent;
+  border-color: transparent;
+  color: theme(colors.primary.main);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.100);
+    color: theme(colors.primary.main);
+  }
+
+  &:disabled {
+    color: theme(colors.action.disabled);
+  }
+}
+
+.btn--text-dark {
+  color: theme(colors.white);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.800);
+  }
+
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
+
+.btn--error,
+.btn--error-dark {
+  background-color: theme(colors.crimson.main);
+  border-color: theme(colors.crimson.main);
+  color: theme(colors.crimson.contrast-text);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.crimson.500);
+    border-color: theme(colors.crimson.500);
+  }
+}
+
+.btn--error-dark {
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
+
+/* End button variants*/
+
+.btn__icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  vertical-align: top;
+
+  svg {
+    display: block;
+    fill: currentColor;
+    height: 100%;
+    width: 100%;
+  }
+
+  .btn--small & {
+    height: 18px;
+    width: 18px;
+  }
+
+  .btn--large & {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+.btn__text,
+.btn__icon {
+  vertical-align: middle;
+}
+
+.btn__text + .btn__icon,
+.btn__icon + .btn__text {
+  margin-left: 0.25em;
+}
