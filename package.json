@@ -1,6 +1,6 @@
 {
   "name": "@anchour/starboard",
-  "version": "0.0.6-0",
+  "version": "0.0.7-0",
   "description": "Common components used in Anchour projects.",
   "type": "module",
   "scripts": {
