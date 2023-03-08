@@ -18,6 +18,12 @@ importers:
       '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
       tailwindcss: 3.2.7
 
+  packages/starboard-tailwind-plugins:
+    specifiers:
+      tailwindcss: ^3.2.7
+    devDependencies:
+      tailwindcss: 3.2.7
+
 packages:
 
   /@nodelib/fs.scandir/2.1.5:
