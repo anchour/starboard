@@ -1,1 +1,3 @@
-export const hideScrollbarsPlugin = require("./hide-scrollbars");
+module.exports = {
+  hideScrollbarsPlugin: require("./hide-scrollbars.js"),
+};

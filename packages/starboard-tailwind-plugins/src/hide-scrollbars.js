@@ -1,6 +1,6 @@
-import plugin from "tailwindcss/plugin";
+const plugin = require("tailwindcss/plugin");
 
-export default plugin(function ({ addUtilities }) {
+module.exports = plugin(function ({ addUtilities }) {
   addUtilities({
     ".hide-scrollbars": {
       overflowY: "scroll",
