@@ -1,6 +1,6 @@
 {
   "name": "@anchour/starboard-tailwind-plugins",
-  "version": "0.1.0-0",
+  "version": "0.1.1-0",
   "description": "Common Tailwind plugins used by the Anchour team.",
   "main": "src/index.js",
   "keywords": [],
