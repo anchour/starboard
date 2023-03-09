@@ -2,12 +2,15 @@
   "name": "@anchour/starboard-tailwind-plugins",
   "version": "0.1.3-0",
   "description": "Common Tailwind plugins used by the Anchour team.",
-  "main": "dist/tailwind-plugins.umd.js",
+  "main": "src/index.js",
   "keywords": [],
   "author": "Anchour",
   "license": "ISC",
   "scripts": {
     "build": "vite build"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">= 3.0.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7",
