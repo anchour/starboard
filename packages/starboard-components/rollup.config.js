@@ -5,7 +5,7 @@ import insert from 'rollup-plugin-insert';
 export default {
 	// input: 'css/components/button/button-config.css',
 	output: {
-    format: 'mjs',
+    type: 'module',
   },
   plugins: [
     copy({
