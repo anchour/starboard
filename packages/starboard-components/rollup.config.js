@@ -4,10 +4,9 @@ import insert from 'rollup-plugin-insert';
 
 export default {
 	// input: 'css/components/button/button-config.css',
-	// output: {
-	// 	file: '../../src/css/components/button.css',
-	// 	format: 'css'
-	// },
+	output: {
+    format: 'cjs',
+  },
   plugins: [
     copy({
       targets: [
