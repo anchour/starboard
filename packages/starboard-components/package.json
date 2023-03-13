@@ -1,8 +1,9 @@
 {
   "name": "@anchour/starboard-components",
-  "version": "0.0.5-0",
+  "version": "0.0.6-0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "rollup --config rollup.config.js"
