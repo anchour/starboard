@@ -1,12 +1,12 @@
 {
   "name": "@anchour/starboard-components",
-  "version": "0.0.7-0",
+  "version": "0.0.8-0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "rollup --config rollup.config.js"
+    "postinstall": "rollup --config ./rollup.config.js"
   },
   "keywords": [],
   "author": "Anchour",
