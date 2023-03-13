@@ -4,8 +4,8 @@
 
 .btn--primary-dark {
   @apply typography-button;
-  background-color: theme(colors.white);
-  border-color: theme(colors.white);
+  background-color: theme(colors.primary);
+  border-color: theme(colors.primary);
   color: theme(colors.black);
 
   &:hover,

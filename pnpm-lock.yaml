@@ -18,12 +18,12 @@ importers:
     specifiers:
       rollup: ^3.18.0
       rollup-plugin-copy: ^3.4.0
-      rollup-plugin-modify: ^3.0.0
+      rollup-plugin-insert: ^1.3.2
       tailwindcss: ^3.2.7
     devDependencies:
       rollup: 3.18.0
       rollup-plugin-copy: 3.4.0
-      rollup-plugin-modify: 3.0.0
+      rollup-plugin-insert: 1.3.2_rollup@3.18.0
       tailwindcss: 3.2.7
 
   packages/starboard-presets:
@@ -473,6 +473,10 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /estree-walker/0.6.1:
+    resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
+    dev: true
+
   /fast-glob/3.2.12:
     resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
     engines: {node: '>=8.6.0'}
@@ -624,8 +628,8 @@ packages:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
 
-  /magic-string/0.25.2:
-    resolution: {integrity: sha512-iLs9mPjh9IuTtRsqqhNGYcZXGei0Nh/A4xirrsqW7c+QhKVFL2vm7U09ru6cHRD22azaP/wMDgI+HCqbETMTtg==}
+  /magic-string/0.25.9:
+    resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
     dev: true
@@ -681,13 +685,6 @@ packages:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
-    dev: true
-
-  /ospec/3.1.0:
-    resolution: {integrity: sha512-+nGtjV3vlADp+UGfL51miAh/hB4awPBkQrArhcgG4trAaoA2gKt5bf9w0m9ch9zOr555cHWaCHZEDiBOkNZSxw==}
-    hasBin: true
-    dependencies:
-      glob: 7.2.3
     dev: true
 
   /path-is-absolute/1.0.1:
@@ -818,11 +815,21 @@ packages:
       is-plain-object: 3.0.1
     dev: true
 
-  /rollup-plugin-modify/3.0.0:
-    resolution: {integrity: sha512-p/ffs0Y2jz2dEnWjq1oVC7SY37tuS+aP7whoNaQz1EAAOPg+k3vKJo8cMMWx6xpdd0NzhX4y2YF9o/NPu5YR0Q==}
+  /rollup-plugin-insert/1.3.2_rollup@3.18.0:
+    resolution: {integrity: sha512-oTlUJikRZ1dYW9Kg9LHbG0T8pKNboHvMI0VZZoOUbqYPHE7rrKERHlGd3xsHH6W1KTr9Fcl4+UgrjpVkveWgPA==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      rollup: '*'
     dependencies:
-      magic-string: 0.25.2
-      ospec: 3.1.0
+      magic-string: 0.25.9
+      rollup: 3.18.0
+      rollup-pluginutils: 2.8.2
+    dev: true
+
+  /rollup-pluginutils/2.8.2:
+    resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
+    dependencies:
+      estree-walker: 0.6.1
     dev: true
 
   /rollup/3.18.0:
