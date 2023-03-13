@@ -1,5 +1,6 @@
 import copy from 'rollup-plugin-copy';
 import insert from 'rollup-plugin-insert';
+import path from 'path';
 
 
 export default {
