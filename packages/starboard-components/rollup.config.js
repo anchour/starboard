@@ -4,9 +4,9 @@ import insert from 'rollup-plugin-insert';
 
 export default {
 	// input: 'css/components/button/button-config.css',
-	output: {
-    type: 'module',
-  },
+	// output: {
+  //   type: 'module',
+  // },
   plugins: [
     copy({
       targets: [
@@ -17,7 +17,7 @@ export default {
       ]
     }),
     insert.append(
-      'import "@anchour/starboard/css/components/button/index";\nimport "components/button";',
+      'import "@anchour/starboard-components/css/components/button/index";\nimport "components/button";',
       {
         include: "path.resolve(process.cwd(), './src/css/main.css')",
       },
