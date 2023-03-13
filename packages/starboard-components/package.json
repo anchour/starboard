@@ -8,7 +8,7 @@
     "postinstall": "rollup --config rollup.config.js"
   },
   "keywords": [],
-  "author": "Anchour Creative",
+  "author": "Anchour",
   "license": "ISC",
   "repository": {
     "type": "git",
