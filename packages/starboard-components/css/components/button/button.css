@@ -1,0 +1,23 @@
+/** define variables here
+*currently placeholder
+*/
+
+.btn--primary-dark {
+  @apply typography-button;
+  background-color: theme(colors.primary);
+  border-color: theme(colors.primary);
+  color: theme(colors.black);
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: theme(colors.grey.100);
+    border-color: theme(colors.grey.100);
+    color: theme(colors.black);
+  }
+
+  &:focus,
+  &:focus-visible {
+    @apply focus-ring-dark;
+  }
+}
