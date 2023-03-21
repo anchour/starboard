@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 
 export default {
-	input: path.resolve(__dirname, './css/components/button/button.css'),
+	input: '',
 	output: {
      type: 'module',
   },
