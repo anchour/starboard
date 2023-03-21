@@ -9,10 +9,10 @@ const __dirname = path.dirname(__filename);
 
 
 export default {
-	// input: 'css/components/button/button-config.css',
-	// output: {
-  //   type: 'module',
-  // },
+	input: path.resolve(__dirname, './css/components/button/button.css'),
+	output: {
+     type: 'module',
+  },
   plugins: [
     copy({
       targets: [
