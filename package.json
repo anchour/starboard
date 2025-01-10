@@ -1,29 +1,24 @@
 {
-  "name": "@anchour/starboard",
-  "version": "0.0.5-0",
-  "description": "Common components used in Anchour projects.",
-  "type": "module",
+  "name": "anchour-blocks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "workspaces": [
+    "packages/blocks/*"
+  ],
   "scripts": {
-    "start": "pnpm dev",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "start:hot": "wp-scripts start --hot --webpack-config=./webpack.config.js"
   },
-  "author": "Anchour",
+  "type": "module",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anchour/starboard.git"
-  },
-  "bugs": {
-    "url": "https://github.com/anchour/starboard/issues"
-  },
-  "homepage": "https://github.com/anchour/starboard#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7",
-    "vite": "^4.1.4"
+    "@wordpress/scripts": "^30.8.1"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1"
   }
 }

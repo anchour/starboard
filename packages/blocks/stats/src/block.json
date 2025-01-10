@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "anchour/stats",
+  "title": "Stats",
+  "icon": "editor-ol",
+  "category": "text",
+  "keywords": ["stats"],
+  "supports": {
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true
+    }
+  },
+  "styles": [
+    {"isDefault": true, "label": "Primary", "name": "primary"},
+    {"label": "Alternate", "name": "alternate"}
+  ],
+  "attributes": {
+    "removeTopSpacing": {
+      "type": "boolean",
+      "default": false
+    },
+    "removeBottomSpacing": {
+      "type": "boolean",
+      "default": false
+    },
+    "statsHeader": {
+      "type": "string"
+    },
+    "headingFontSize": {
+      "type": "string",
+      "default": "heading-xs"
+    },
+    "responsive": {
+      "type": "object",
+      "default": {
+        "perRow": 4
+      }
+    },
+    "breakpoints": {
+      "type": "object",
+      "default": {
+        "Default": {
+          "active": true
+        }
+      }
+    }
+  }
+}

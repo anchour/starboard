@@ -1,0 +1,9 @@
+{
+  "name": "@starboard/faq-item",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  }
+}

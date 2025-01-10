@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "anchour/stats-item",
+  "title": "Stats item",
+  "category": "media",
+  "keywords": ["stats"],
+  "textdomain": "anchour",
+  "icon": "editor-textcolor",
+  "parent": ["anchour/stats"],
+  "supports": {
+    "anchor": true,
+    "color": {
+      "text": false,
+      "background": false
+    }
+  },
+  "attributes": {
+    "statsHeading": {
+      "type": "string"
+    },
+    "statsDescription": {
+      "type": "string"
+    },
+    "statsFootnote": {
+      "type": "string"
+    },
+    "headingFontSize": {
+      "type": "string",
+      "default": "heading-xl"
+    },
+    "paragraphFontSize": {
+      "type": "string",
+      "default": "body-md"
+    }
+  }
+}

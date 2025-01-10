@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "starboard/faq-item",
+  "title": "FAQ Item",
+  "description": "FAQ item",
+  "icon": "excerpt-view",
+  "category": "media",
+  "parent": [
+    "starboard/faq"
+  ],
+  "keywords": [
+    "faq",
+    "toggle",
+    "details"
+  ],
+  "supports": {
+    "anchor": true,
+    "html": false,
+    "className": true,
+    "splitting": true,
+    "color": {
+      "text": false,
+      "background": false
+    }
+  },
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "isOpen": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": "file:./build/index.js"
+}
