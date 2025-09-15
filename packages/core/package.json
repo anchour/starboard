@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "npm run build:js && npm run build:css && npm run build:components",
-    "build:js": "cp src/index.js dist/index.js",
+    "build:js": "mkdir -p dist && cp src/index.js dist/index.js",
     "build:css": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --minify",
     "build:components": "node scripts/build-components.js",
     "dev": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --watch",

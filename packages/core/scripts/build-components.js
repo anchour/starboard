@@ -7,8 +7,9 @@ const { execSync } = require('child_process');
 const srcDir = path.resolve('src/styles/components');
 const distDir = path.resolve('dist/styles/components');
 
-// Ensure dist directory exists
+// Ensure dist directories exist
 fs.mkdirSync(distDir, { recursive: true });
+fs.mkdirSync(path.resolve('dist/styles'), { recursive: true });
 
 // Get all component directories
 const components = fs.readdirSync(srcDir, { withFileTypes: true })
