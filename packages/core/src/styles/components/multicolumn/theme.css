@@ -1,0 +1,36 @@
+/* Multicolumn Theme - Visual Styling */
+.multicolumn-item__has-border {
+  border-top: var(--sb-border-width, 1px) solid rgba(0, 0, 0, 0.1);
+  padding-top: var(--sb-spacing-lg);
+}
+
+.multicolumn-item__text-header {
+  @apply text-gray-900;
+}
+
+.multicolumn-item__text-body {
+  @apply text-gray-900;
+}
+
+/* Visual debugging styles - can be removed in production */
+.multicolumn * {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.multicolumn-item__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md transition-colors;
+}
+
+.btn--primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn--secondary {
+  @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
+}

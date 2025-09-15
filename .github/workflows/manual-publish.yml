@@ -1,0 +1,84 @@
+name: Manual Publish @anchour/starboard
+
+# This workflow can be triggered manually from GitHub UI
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: |
+          cd packages/core
+          npm install
+
+      - name: Version bump and build
+        run: |
+          cd packages/core
+          npm version ${{ github.event.inputs.version_bump }}
+          npm run build
+
+      - name: Get new version
+        id: version
+        run: |
+          cd packages/core
+          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Push version tag
+        run: |
+          git push origin main
+          git push origin v${{ steps.version.outputs.VERSION }}
+
+      - name: Publish to npm
+        run: |
+          cd packages/core
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.VERSION }}
+          release_name: Release v${{ steps.version.outputs.VERSION }}
+          body: |
+            ## Changes in v${{ steps.version.outputs.VERSION }}
+            
+            - Automated release via GitHub Actions
+            - Version bump: ${{ github.event.inputs.version_bump }}
+          draft: false
+          prerelease: false

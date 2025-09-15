@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "starboard/numbered-feature-item",
+  "title": "Numbered Feature Item",
+  "description": "Individual numbered feature with heading and description",
+  "icon": "editor-ol",
+  "category": "media",
+  "parent": [
+    "starboard/numbered-features"
+  ],
+  "keywords": [
+    "feature",
+    "number",
+    "item",
+    "list"
+  ],
+  "supports": {
+    "anchor": false,
+    "html": false,
+    "className": true,
+    "inserter": false,
+    "reusable": false,
+    "color": {
+      "text": false,
+      "background": false
+    }
+  },
+  "attributes": {
+    "number": {
+      "type": "number",
+      "default": 1
+    },
+    "heading": {
+      "type": "string",
+      "default": "Small heading here"
+    },
+    "description": {
+      "type": "string",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "style": "file:./build/style-index.css"
+}

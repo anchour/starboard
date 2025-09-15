@@ -11,7 +11,12 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "start:hot": "wp-scripts start --hot --webpack-config=./webpack.config.js"
+    "start:hot": "wp-scripts start --hot --webpack-config=./webpack.config.js",
+    "build:core": "pnpm --filter @anchour/starboard build",
+    "dev:core": "pnpm --filter @anchour/starboard dev",
+    "publish:core:patch": "pnpm --filter @anchour/starboard run release:patch",
+    "publish:core:minor": "pnpm --filter @anchour/starboard run release:minor",
+    "publish:core:major": "pnpm --filter @anchour/starboard run release:major"
   },
   "type": "module",
   "license": "ISC",

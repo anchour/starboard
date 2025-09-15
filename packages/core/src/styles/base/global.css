@@ -1,0 +1,59 @@
+/* Global Design Tokens */
+:root {
+  /* Spacing Scale */
+  --sb-spacing-xs: 0.25rem;  /* 4px */
+  --sb-spacing-sm: 0.5rem;   /* 8px */
+  --sb-spacing-md: 1rem;     /* 16px */
+  --sb-spacing-lg: 1.5rem;   /* 24px */
+  --sb-spacing-xl: 2rem;     /* 32px */
+  --sb-spacing-2xl: 2.5rem;  /* 40px */
+  --sb-spacing-3xl: 3rem;    /* 48px */
+  --sb-spacing-4xl: 4rem;    /* 64px */
+  --sb-spacing-5xl: 5rem;    /* 80px */
+  --sb-spacing-6xl: 6rem;    /* 96px */
+  
+  /* Container */
+  --sb-gutter: 1.5rem; /* 24px */
+  --sb-container-max-width: 1280px;
+  
+  /* Grid Gaps */
+  --sb-gap-xs: var(--sb-spacing-xs);
+  --sb-gap-sm: var(--sb-spacing-sm);
+  --sb-gap-md: var(--sb-spacing-md);
+  --sb-gap-lg: var(--sb-spacing-lg);
+  --sb-gap-xl: var(--sb-spacing-xl);
+  --sb-gap-2xl: var(--sb-spacing-2xl);
+  
+  /* Component-specific spacing */
+  --sb-multicolumn-padding-y: clamp(3rem, 6vw, 6rem);
+  --sb-multicolumn-gap-x: var(--sb-gap-lg);
+  --sb-multicolumn-gap-y: calc(var(--sb-gap-lg) * 2);
+  --sb-multicolumn-item-gap: var(--sb-spacing-md);
+  --sb-multicolumn-item-padding-bottom: var(--sb-spacing-lg);
+  --sb-multicolumn-item-text-gap: var(--sb-spacing-sm);
+  --sb-multicolumn-item-text-margin-top: var(--sb-spacing-sm);
+  
+  /* Borders */
+  --sb-border-width: 1px;
+  --sb-border-radius-sm: 0.25rem;
+  --sb-border-radius-md: 0.5rem;
+  --sb-border-radius-lg: 1rem;
+  
+  /* Z-index scale */
+  --sb-z-dropdown: 1000;
+  --sb-z-sticky: 1020;
+  --sb-z-fixed: 1030;
+  --sb-z-modal-backdrop: 1040;
+  --sb-z-modal: 1050;
+  --sb-z-popover: 1060;
+  --sb-z-tooltip: 1070;
+}
+
+/* Desktop spacing overrides */
+@media (min-width: 1280px) {
+  :root {
+    --sb-gutter: 2.25rem; /* 36px */
+    --sb-multicolumn-gap-x: 2.25rem;
+    --sb-multicolumn-gap-y: 6rem;
+  }
+}

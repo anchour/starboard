@@ -1,0 +1,112 @@
+/* Container styling - only on parent block */
+.wp-block-starboard-numbered-features .container {
+	max-width: 1572px;
+	margin: 0 auto;
+	padding: 70px 78px 49px;
+}
+
+/* Section heading */
+.wp-block-starboard-numbered-features .section-heading {
+	font-size: 42px;
+	font-weight: 600;
+	line-height: 1.19;
+	letter-spacing: -0.42px;
+	color: #232323;
+	margin: 0 0 95px 0;
+}
+
+/* Features grid */
+.wp-block-starboard-numbered-features .features-grid {
+	display: grid;
+	gap: 49px 170px;
+	padding-right: 134px;
+}
+
+/* 3 column layout (default) */
+.wp-block-starboard-numbered-features.columns-3 .features-grid {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+/* 2 column layout */
+.wp-block-starboard-numbered-features.columns-2 .features-grid {
+	grid-template-columns: repeat(2, 1fr);
+	gap: 49px 100px;
+}
+
+/* Editor-specific styles */
+.block-editor-block-list__block.wp-block-starboard-numbered-features {
+	padding: 0;
+}
+
+.block-editor-block-list__block.wp-block-starboard-numbered-features .container {
+	padding: 40px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+	/* Tablet: 2 columns */
+	.wp-block-starboard-numbered-features .container {
+		padding: 50px 40px 30px;
+	}
+
+	.wp-block-starboard-numbered-features .features-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 40px 60px;
+		padding-right: 60px;
+	}
+
+	.wp-block-starboard-numbered-features .section-heading {
+		font-size: 36px;
+		margin-bottom: 60px;
+	}
+
+	.wp-block-starboard-numbered-features.columns-3 .features-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	/* Mobile: 1 column */
+	.wp-block-starboard-numbered-features .container {
+		padding: 40px 20px 20px;
+	}
+
+	.wp-block-starboard-numbered-features .features-grid {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding-right: 0;
+	}
+
+	.wp-block-starboard-numbered-features .section-heading {
+		font-size: 28px;
+		margin-bottom: 40px;
+	}
+
+	.wp-block-starboard-numbered-features.columns-2 .features-grid,
+	.wp-block-starboard-numbered-features.columns-3 .features-grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* Adjust feature item styles on mobile */
+	.numbered-feature-item .feature-number {
+		font-size: 60px;
+	}
+
+	.numbered-feature-item .feature-heading {
+		font-size: 20px;
+	}
+}
+
+/* Wide alignment support */
+.wp-block-starboard-numbered-features.alignwide .container {
+	max-width: 1920px;
+}
+
+.wp-block-starboard-numbered-features.alignfull {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.wp-block-starboard-numbered-features.alignfull .container {
+	max-width: none;
+}

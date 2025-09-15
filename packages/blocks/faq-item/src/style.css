@@ -1,0 +1,78 @@
+/**
+ * FAQ Item Frontend Styles
+ * Minimal styling for individual FAQ items using details/summary
+ */
+
+.wp-block-starboard-faq-item.faq {
+	border: 1px solid #e0e0e0;
+	border-radius: 0.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.wp-block-starboard-faq-item.faq:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-starboard-faq-item.faq summary.faq__title {
+	padding: 1rem;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 1.125rem;
+	line-height: 1.4;
+	list-style: none;
+	user-select: none;
+	background-color: #f9f9f9;
+	border-radius: 0.25rem 0.25rem 0 0;
+	transition: background-color 0.2s ease;
+}
+
+.wp-block-starboard-faq-item.faq summary.faq__title:hover {
+	background-color: #f0f0f0;
+}
+
+.wp-block-starboard-faq-item.faq summary.faq__title:focus {
+	outline: 2px solid #005ccc;
+	outline-offset: -2px;
+}
+
+/* Hide default disclosure triangle */
+.wp-block-starboard-faq-item.faq summary.faq__title::-webkit-details-marker {
+	display: none;
+}
+
+.wp-block-starboard-faq-item.faq summary.faq__title::marker {
+	display: none;
+}
+
+/* Custom arrow indicator */
+.wp-block-starboard-faq-item.faq summary.faq__title::after {
+	content: '';
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-left: auto;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: rotate(-45deg);
+	transition: transform 0.2s ease;
+	float: right;
+	margin-top: 0.125rem;
+}
+
+.wp-block-starboard-faq-item.faq[open] summary.faq__title::after {
+	transform: rotate(45deg);
+}
+
+.wp-block-starboard-faq-item.faq .faq__content {
+	padding: 1rem;
+	line-height: 1.6;
+	border-top: 1px solid #e0e0e0;
+}
+
+.wp-block-starboard-faq-item.faq .faq__content > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-starboard-faq-item.faq .faq__content > *:last-child {
+	margin-bottom: 0;
+}

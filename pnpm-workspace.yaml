@@ -1,2 +1,4 @@
 packages:
   - 'packages/*'         # Include all packages in the packages directory
+  - 'packages/blocks/*'  # Specifically include all blocks as separate packages
+  - 'packages/core'      # Include the core Starboard package

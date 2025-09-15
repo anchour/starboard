@@ -1,0 +1,64 @@
+{
+  "name": "@anchour/starboard",
+  "version": "0.1.0",
+  "description": "Starboard wireframe design system",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./styles": "./dist/styles/index.css",
+    "./styles/source": "./src/styles/index.css",
+    "./styles/components/*": "./dist/styles/components/*/index.css",
+    "./styles/*/wireframe": "./dist/styles/components/*/wireframe.css",
+    "./styles/*/basic": "./dist/styles/components/*/basic.css",
+    "./styles/*/theme": "./dist/styles/components/*/theme.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run build:js && npm run build:css && npm run build:components",
+    "build:js": "cp src/index.js dist/index.js",
+    "build:css": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --minify",
+    "build:components": "node scripts/build-components.js",
+    "dev": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --watch",
+    "prepublishOnly": "npm run build",
+    "release:patch": "npm version patch && git push origin main && git push --tags",
+    "release:minor": "npm version minor && git push origin main && git push --tags", 
+    "release:major": "npm version major && git push origin main && git push --tags",
+    "publish:local": "npm run build && npm publish"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "author": "Anchour",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anchour/starboard.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/anchour/starboard#readme",
+  "bugs": {
+    "url": "https://github.com/anchour/starboard/issues"
+  },
+  "keywords": [
+    "design-system",
+    "css",
+    "tailwind",
+    "wireframe",
+    "components",
+    "starboard"
+  ]
+}

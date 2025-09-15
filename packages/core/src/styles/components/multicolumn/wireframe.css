@@ -1,0 +1,12 @@
+/* Multicolumn Wireframe - Structure Only */
+.multicolumn__container {
+  @apply container mx-auto px-6 lg:px-9 grid grid-cols-12 gap-6 lg:gap-9;
+}
+
+.multicolumn__header {
+  @apply col-span-full;
+}
+
+.multicolumn__wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 col-span-full xl:col-start-2 xl:col-span-11;
+}

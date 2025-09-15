@@ -1,0 +1,14 @@
+/**
+ * FAQ Block Frontend Styles
+ * Minimal styling for FAQ container block
+ */
+
+.wp-block-starboard-faq {
+	margin-bottom: 2rem;
+}
+
+.wp-block-starboard-faq .faqs-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}

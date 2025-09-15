@@ -1,0 +1,33 @@
+/* Multicolumn Basic - Spacing & Hierarchy */
+.multicolumn {
+  padding-top: var(--sb-multicolumn-padding-y);
+  padding-bottom: var(--sb-multicolumn-padding-y);
+}
+
+.multicolumn__wrapper {
+  gap: var(--sb-multicolumn-gap-x) var(--sb-multicolumn-gap-y);
+}
+
+.multicolumn-item {
+  padding-bottom: var(--sb-multicolumn-item-padding-bottom);
+}
+
+.multicolumn-item > *:not([hidden]):not(:last-of-type) {
+  margin-bottom: var(--sb-multicolumn-item-gap);
+}
+
+.multicolumn-item__text {
+  margin-top: var(--sb-multicolumn-item-text-margin-top);
+}
+
+.multicolumn-item__text > :not(:first-child) {
+  margin-top: var(--sb-multicolumn-item-text-gap);
+}
+
+.multicolumn-item__text-header {
+  @apply text-2xl font-semibold;
+}
+
+.multicolumn-item__text-body {
+  @apply text-base leading-relaxed;
+}

@@ -1,0 +1,58 @@
+.numbered-feature-item {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 23px 0;
+	position: relative;
+}
+
+.numbered-feature-item.has-border::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background-color: #666;
+}
+
+.numbered-feature-item .feature-number {
+	font-size: 96px;
+	font-weight: 600;
+	line-height: 1.125;
+	letter-spacing: -0.96px;
+	color: #232323;
+}
+
+.numbered-feature-item .feature-content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.numbered-feature-item .feature-heading {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.167;
+	letter-spacing: -0.24px;
+	color: #232323;
+	margin: 0;
+}
+
+.numbered-feature-item .feature-description {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #232323;
+	margin: 0;
+}
+
+/* Frontend number display using CSS counters */
+.wp-block-starboard-numbered-features {
+	counter-reset: feature-counter;
+}
+
+.wp-block-starboard-numbered-features .numbered-feature-item .feature-number::before {
+	counter-increment: feature-counter;
+	content: counter(feature-counter);
+}
