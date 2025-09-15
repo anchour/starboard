@@ -9,7 +9,8 @@
     "packages/blocks/*"
   ],
   "scripts": {
-    "build": "wp-scripts build",
+    "build": "wp-scripts build && npm run build:block-styles",
+    "build:block-styles": "node scripts/build-block-styles.js",
     "start": "wp-scripts start",
     "start:hot": "wp-scripts start --hot --webpack-config=./webpack.config.js",
     "build:core": "pnpm --filter @anchour/starboard build",
@@ -21,9 +22,31 @@
   "type": "module",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/scripts": "^30.8.1"
+    "@wordpress/scripts": "^30.8.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "classnames": "^2.5.1"
-  }
+  },
+  "exports": {
+    "./blocks/*/": "./packages/blocks/*/build/",
+    "./blocks/*/index.js": "./packages/blocks/*/build/index.js",
+    "./blocks/*/block.json": "./packages/blocks/*/build/block.json",
+    "./blocks/*/index.asset.php": "./packages/blocks/*/build/index.asset.php",
+    "./blocks/*/style.css": "./packages/blocks/*/build/style-index.css",
+    "./blocks/*/styles/wireframe.css": "./packages/blocks/*/build/styles/wireframe.css",
+    "./blocks/*/styles/core.css": "./packages/blocks/*/build/styles/core.css",
+    "./blocks/*/styles/theme.css": "./packages/blocks/*/build/styles/theme.css",
+    "./blocks/*/styles/source/style.css": "./packages/blocks/*/src/style.css",
+    "./blocks/*/styles/source/wireframe.css": "./packages/blocks/*/src/styles/wireframe.css",
+    "./blocks/*/styles/source/core.css": "./packages/blocks/*/src/styles/core.css",
+    "./blocks/*/styles/source/theme.css": "./packages/blocks/*/src/styles/theme.css"
+  },
+  "files": [
+    "packages/blocks/*/build/**/*",
+    "packages/blocks/*/src/styles/**/*.css",
+    "packages/blocks/*/src/style.css"
+  ]
 }
