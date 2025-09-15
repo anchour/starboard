@@ -1,0 +1,51 @@
+/**
+ * FAQ Item Wireframe Styles
+ * Structure and layout only - no visual design
+ */
+
+.wp-block-starboard-faq-item.faq {
+	@apply mb-2;
+}
+
+.wp-block-starboard-faq-item.faq:last-child {
+	@apply mb-0;
+}
+
+.wp-block-starboard-faq-item.faq summary.faq__title {
+	@apply p-4 cursor-pointer list-none select-none;
+}
+
+/* Hide default disclosure triangle */
+.wp-block-starboard-faq-item.faq summary.faq__title::-webkit-details-marker {
+	@apply hidden;
+}
+
+.wp-block-starboard-faq-item.faq summary.faq__title::marker {
+	display: none;
+}
+
+/* Custom arrow indicator */
+.wp-block-starboard-faq-item.faq summary.faq__title::after {
+	@apply inline-block w-3 h-3 ml-auto float-right mt-0.5;
+	content: '';
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: rotate(-45deg);
+	transition: transform 0.2s ease;
+}
+
+.wp-block-starboard-faq-item.faq[open] summary.faq__title::after {
+	transform: rotate(45deg);
+}
+
+.wp-block-starboard-faq-item.faq .faq__content {
+	@apply p-4;
+}
+
+.wp-block-starboard-faq-item.faq .faq__content > *:first-child {
+	@apply mt-0;
+}
+
+.wp-block-starboard-faq-item.faq .faq__content > *:last-child {
+	@apply mb-0;
+}
