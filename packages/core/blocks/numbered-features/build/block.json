@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "starboard/numbered-features",
+  "title": "Numbered Features",
+  "description": "Section with numbered feature items in a grid layout",
+  "icon": "grid-view",
+  "category": "layout",
+  "keywords": [
+    "features",
+    "numbered",
+    "list",
+    "grid",
+    "section"
+  ],
+  "supports": {
+    "anchor": true,
+    "html": false,
+    "className": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "color": {
+      "background": true,
+      "text": false
+    }
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Heading goes here"
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 2
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#EFEFEF"
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "maxItems": {
+      "type": "number",
+      "default": 6
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "style": "file:./build/style-index.css"
+}

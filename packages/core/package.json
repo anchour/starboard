@@ -10,17 +10,31 @@
     "./styles/components/*": "./dist/styles/components/*/index.css",
     "./styles/*/wireframe": "./dist/styles/components/*/wireframe.css",
     "./styles/*/basic": "./dist/styles/components/*/basic.css",
-    "./styles/*/theme": "./dist/styles/components/*/theme.css"
+    "./styles/*/theme": "./dist/styles/components/*/theme.css",
+    "./blocks/*/": "./blocks/*/build/",
+    "./blocks/*/index.js": "./blocks/*/build/index.js",
+    "./blocks/*/block.json": "./blocks/*/build/block.json",
+    "./blocks/*/index.asset.php": "./blocks/*/build/index.asset.php",
+    "./blocks/*/style.css": "./blocks/*/build/style-index.css",
+    "./blocks/*/styles/wireframe.css": "./blocks/*/build/styles/wireframe.css",
+    "./blocks/*/styles/core.css": "./blocks/*/build/styles/core.css",
+    "./blocks/*/styles/theme.css": "./blocks/*/build/styles/theme.css",
+    "./blocks/*/styles/source/style.css": "./blocks/*/src/style.css",
+    "./blocks/*/styles/source/wireframe.css": "./blocks/*/src/styles/wireframe.css",
+    "./blocks/*/styles/source/core.css": "./blocks/*/src/styles/core.css",
+    "./blocks/*/styles/source/theme.css": "./blocks/*/src/styles/theme.css"
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "blocks"
   ],
   "scripts": {
-    "build": "npm run build:js && npm run build:css && npm run build:components",
+    "build": "npm run build:js && npm run build:css && npm run build:components && npm run build:blocks",
     "build:js": "mkdir -p dist && cp src/index.js dist/index.js",
     "build:css": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --minify",
     "build:components": "node scripts/build-components.js",
+    "build:blocks": "rm -rf ./blocks && mkdir -p ./blocks && cd ../blocks && for dir in */; do mkdir -p ../core/blocks/$dir && cp -r $dir/build ../core/blocks/$dir/ && cp -r $dir/src ../core/blocks/$dir/; done",
     "dev": "tailwindcss -i ./src/styles/index.css -o ./dist/styles/index.css --watch",
     "prepublishOnly": "npm run build",
     "release:patch": "npm version patch --no-git-tag-version && cd ../.. && git add packages/core/package.json && git commit -m \"Bump version to $(node -p 'require(\"./packages/core/package.json\").version')\" && git tag \"v$(node -p 'require(\"./packages/core/package.json\").version')\" && git push origin main && git push --tags",

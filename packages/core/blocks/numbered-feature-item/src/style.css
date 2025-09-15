@@ -1,0 +1,10 @@
+/**
+ * Numbered Feature Item Frontend Styles
+ * Main style file that imports all variants
+ * This file is used by WordPress when the block is registered
+ */
+
+/* Import all style variants */
+@import './styles/wireframe.css';
+@import './styles/core.css';
+@import './styles/theme.css';

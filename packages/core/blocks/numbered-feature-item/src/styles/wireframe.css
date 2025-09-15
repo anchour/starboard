@@ -1,0 +1,34 @@
+/**
+ * Numbered Feature Item Wireframe Styles
+ * Structure and layout only - no visual design
+ */
+
+.numbered-feature-item {
+	@apply flex flex-col gap-4 py-6 relative;
+}
+
+.numbered-feature-item .feature-number {
+	@apply text-6xl leading-tight;
+}
+
+.numbered-feature-item .feature-content {
+	@apply flex flex-col gap-2;
+}
+
+.numbered-feature-item .feature-heading {
+	@apply text-2xl m-0;
+}
+
+.numbered-feature-item .feature-description {
+	@apply text-base leading-normal m-0;
+}
+
+/* Frontend number display using CSS counters */
+.wp-block-starboard-numbered-features {
+	counter-reset: feature-counter;
+}
+
+.wp-block-starboard-numbered-features .numbered-feature-item .feature-number::before {
+	counter-increment: feature-counter;
+	content: counter(feature-counter);
+}

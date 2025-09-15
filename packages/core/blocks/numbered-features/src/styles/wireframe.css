@@ -1,0 +1,43 @@
+/**
+ * Numbered Features Wireframe Styles
+ * Structure and layout only - no visual design
+ */
+
+/* Container */
+.wp-block-starboard-numbered-features .container {
+	@apply max-w-7xl mx-auto p-8;
+}
+
+/* Section heading */
+.wp-block-starboard-numbered-features .section-heading {
+	@apply text-4xl mb-12;
+}
+
+/* Features grid */
+.wp-block-starboard-numbered-features .features-grid {
+	@apply grid gap-8;
+}
+
+/* Column layouts */
+.wp-block-starboard-numbered-features.columns-3 .features-grid {
+	@apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.wp-block-starboard-numbered-features.columns-2 .features-grid {
+	@apply grid-cols-1 md:grid-cols-2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.wp-block-starboard-numbered-features .container {
+		@apply p-4;
+	}
+	
+	.wp-block-starboard-numbered-features .section-heading {
+		@apply text-2xl mb-8;
+	}
+	
+	.wp-block-starboard-numbered-features .features-grid {
+		@apply grid-cols-1 gap-6;
+	}
+}

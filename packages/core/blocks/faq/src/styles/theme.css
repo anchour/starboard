@@ -1,0 +1,21 @@
+/**
+ * FAQ Block Theme Styles
+ * Theme-specific customizations and enhancements
+ */
+
+.wp-block-starboard-faq {
+	@apply mb-10 p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm border border-gray-100;
+}
+
+.wp-block-starboard-faq .faqs-wrapper {
+	@apply flex flex-col gap-6;
+}
+
+.wp-block-starboard-faq h2 {
+	@apply text-3xl font-bold mb-6 text-gray-900;
+}
+
+/* Add hover effect to child FAQ items when in theme mode */
+.wp-block-starboard-faq .wp-block-starboard-faq-item {
+	@apply transition-all duration-200 hover:shadow-md;
+}

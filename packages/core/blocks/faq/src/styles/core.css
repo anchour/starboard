@@ -1,0 +1,16 @@
+/**
+ * FAQ Block Core Styles
+ * Base component styling
+ */
+
+.wp-block-starboard-faq {
+	@apply mb-8 p-6 bg-white rounded-lg;
+}
+
+.wp-block-starboard-faq .faqs-wrapper {
+	@apply flex flex-col gap-4;
+}
+
+.wp-block-starboard-faq h2 {
+	@apply text-2xl font-semibold mb-4;
+}

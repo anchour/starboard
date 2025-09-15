@@ -1,0 +1,111 @@
+/**
+ * Numbered Feature Item Theme Styles
+ * Theme-specific customizations and enhancements
+ */
+
+.numbered-feature-item {
+	@apply flex flex-col gap-5 py-8 relative transition-all duration-300;
+}
+
+.numbered-feature-item:hover {
+	@apply transform translate-x-2;
+}
+
+.numbered-feature-item.has-border::before {
+	content: '';
+	@apply absolute top-0 left-0 right-0 h-px;
+	@apply bg-gradient-to-r from-blue-400 via-blue-500 to-transparent;
+}
+
+.numbered-feature-item .feature-number {
+	@apply font-bold leading-none tracking-tighter;
+	font-size: 7rem;
+	background: linear-gradient(135deg, theme('colors.blue.600'), theme('colors.purple.600'));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.numbered-feature-item .feature-content {
+	@apply flex flex-col gap-3;
+}
+
+.numbered-feature-item .feature-heading {
+	@apply text-2xl font-bold leading-snug tracking-tight text-gray-900 m-0;
+	@apply relative;
+}
+
+/* Add accent line under heading */
+.numbered-feature-item .feature-heading::after {
+	content: '';
+	@apply absolute -bottom-1 left-0 w-12 h-0.5;
+	@apply bg-gradient-to-r from-blue-500 to-purple-500 rounded-full;
+	@apply transition-all duration-300;
+}
+
+.numbered-feature-item:hover .feature-heading::after {
+	@apply w-16;
+}
+
+.numbered-feature-item .feature-description {
+	@apply text-base font-normal leading-relaxed text-gray-700 m-0;
+}
+
+/* Frontend number display using CSS counters with enhanced styling */
+.wp-block-starboard-numbered-features {
+	counter-reset: feature-counter;
+}
+
+.wp-block-starboard-numbered-features .numbered-feature-item .feature-number::before {
+	counter-increment: feature-counter;
+	content: counter(feature-counter, decimal-leading-zero);
+}
+
+/* Add subtle animation on hover */
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.8;
+	}
+}
+
+.numbered-feature-item:hover .feature-number {
+	animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments with enhanced styling */
+@media (max-width: 768px) {
+	.numbered-feature-item .feature-number {
+		font-size: 5rem;
+		background: linear-gradient(135deg, theme('colors.gray.800'), theme('colors.gray.600'));
+	}
+	
+	.numbered-feature-item .feature-heading {
+		@apply text-xl;
+	}
+	
+	.numbered-feature-item .feature-description {
+		@apply text-sm text-gray-600;
+	}
+	
+	.numbered-feature-item:hover {
+		@apply transform-none;
+	}
+}
+
+/* Dark mode support (if theme supports it) */
+@media (prefers-color-scheme: dark) {
+	.numbered-feature-item .feature-heading {
+		@apply text-gray-100;
+	}
+	
+	.numbered-feature-item .feature-description {
+		@apply text-gray-300;
+	}
+	
+	.numbered-feature-item.has-border::before {
+		@apply bg-gradient-to-r from-blue-600 via-blue-700 to-transparent;
+	}
+}
