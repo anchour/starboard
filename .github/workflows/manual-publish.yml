@@ -48,6 +48,8 @@ jobs:
         run: |
           cd packages/core
           pnpm version ${{ github.event.inputs.version_bump }}
+          git add package.json
+          git commit -m "Bump version to $(node -p "require('./package.json').version")"
           pnpm run build
 
       - name: Get new version
@@ -64,7 +66,7 @@ jobs:
       - name: Publish to npm
         run: |
           cd packages/core
-          pnpm publish
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
