@@ -1,58 +1,10 @@
-.numbered-feature-item {
-	display: flex;
-	flex-direction: column;
-	gap: 0.9375rem; /* 15px */
-	padding: 1.4375rem 0; /* 23px */
-	position: relative;
-}
+/**
+ * Numbered Feature Item Frontend Styles
+ * Main style file that imports all variants
+ * This file is used by WordPress when the block is registered
+ */
 
-.numbered-feature-item.has-border::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 0.0625rem; /* 1px */
-	background-color: #666;
-}
-
-.numbered-feature-item .feature-number {
-	font-size: 6rem; /* 96px */
-	font-weight: 600;
-	line-height: 1.125;
-	letter-spacing: -0.06rem; /* -0.96px */
-	color: #232323;
-}
-
-.numbered-feature-item .feature-content {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem; /* 8px */
-}
-
-.numbered-feature-item .feature-heading {
-	font-size: 1.5rem; /* 24px */
-	font-weight: 600;
-	line-height: 1.167;
-	letter-spacing: -0.015rem; /* -0.24px */
-	color: #232323;
-	margin: 0;
-}
-
-.numbered-feature-item .feature-description {
-	font-size: 1rem; /* 16px */
-	font-weight: 400;
-	line-height: 1.5;
-	color: #232323;
-	margin: 0;
-}
-
-/* Frontend number display using CSS counters */
-.wp-block-starboard-numbered-features {
-	counter-reset: feature-counter;
-}
-
-.wp-block-starboard-numbered-features .numbered-feature-item .feature-number::before {
-	counter-increment: feature-counter;
-	content: counter(feature-counter);
-}
+/* Import all style variants */
+@import './styles/wireframe.css';
+@import './styles/core.css';
+@import './styles/theme.css';

@@ -1,0 +1,54 @@
+/**
+ * Numbered Feature Item Core Styles
+ * Base component styling
+ */
+
+.numbered-feature-item {
+	@apply flex flex-col gap-4 py-6 relative;
+}
+
+.numbered-feature-item.has-border::before {
+	content: '';
+	@apply absolute top-0 left-0 right-0 h-px bg-gray-600;
+}
+
+.numbered-feature-item .feature-number {
+	@apply text-8xl font-semibold leading-tight tracking-tight text-gray-900;
+}
+
+.numbered-feature-item .feature-content {
+	@apply flex flex-col gap-2;
+}
+
+.numbered-feature-item .feature-heading {
+	@apply text-2xl font-semibold leading-snug tracking-tight text-gray-900 m-0;
+}
+
+.numbered-feature-item .feature-description {
+	@apply text-base font-normal leading-relaxed text-gray-900 m-0;
+}
+
+/* Frontend number display using CSS counters */
+.wp-block-starboard-numbered-features {
+	counter-reset: feature-counter;
+}
+
+.wp-block-starboard-numbered-features .numbered-feature-item .feature-number::before {
+	counter-increment: feature-counter;
+	content: counter(feature-counter);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.numbered-feature-item .feature-number {
+		@apply text-6xl;
+	}
+	
+	.numbered-feature-item .feature-heading {
+		@apply text-xl;
+	}
+	
+	.numbered-feature-item .feature-description {
+		@apply text-sm;
+	}
+}
