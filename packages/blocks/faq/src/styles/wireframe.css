@@ -1,0 +1,12 @@
+/**
+ * FAQ Block Wireframe Styles
+ * Structure and layout only - no visual design
+ */
+
+.wp-block-starboard-faq {
+	@apply mb-8;
+}
+
+.wp-block-starboard-faq .faqs-wrapper {
+	@apply flex flex-col gap-4;
+}

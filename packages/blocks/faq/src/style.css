@@ -1,14 +1,10 @@
 /**
  * FAQ Block Frontend Styles
- * Minimal styling for FAQ container block
+ * Main style file that imports all variants
+ * This file is used by WordPress when the block is registered
  */
 
-.wp-block-starboard-faq {
-	margin-bottom: 2rem;
-}
-
-.wp-block-starboard-faq .faqs-wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
+/* Import all style variants */
+@import './styles/wireframe.css';
+@import './styles/core.css';
+@import './styles/theme.css';
