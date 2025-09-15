@@ -42,13 +42,13 @@ jobs:
       - name: Install dependencies
         run: |
           cd packages/core
-          npm install
+          pnpm install
 
       - name: Version bump and build
         run: |
           cd packages/core
-          npm version ${{ github.event.inputs.version_bump }}
-          npm run build
+          pnpm version ${{ github.event.inputs.version_bump }}
+          pnpm run build
 
       - name: Get new version
         id: version
@@ -64,7 +64,7 @@ jobs:
       - name: Publish to npm
         run: |
           cd packages/core
-          npm publish
+          pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

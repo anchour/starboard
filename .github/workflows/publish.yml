@@ -26,17 +26,17 @@ jobs:
       - name: Install dependencies
         run: |
           cd packages/core
-          npm install
+          pnpm install
 
       - name: Build package
         run: |
           cd packages/core
-          npm run build
+          pnpm run build
 
       - name: Publish to npm
         run: |
           cd packages/core
-          npm publish
+          pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
