@@ -3,6 +3,8 @@
  * The settings page for the Starboard plugin.
  */
 
+defined('ABSPATH') || exit;
+
 use Starboard\GetBlocks;
 use Starboard\BlockSupports;
 use Starboard\AccessControl;
@@ -11,7 +13,7 @@ use Starboard\ThemeOverride;
 // Common data for all tabs
 $blocks = GetBlocks::run();
 $enabled = GetBlocks::enabled();
-$currentTab = $_GET['tab'] ?? 'blocks';
+$currentTab = sanitize_key($_GET['tab'] ?? 'blocks');
 
 // Access control data
 $restrictAccess = AccessControl::isRestrictionEnabled();

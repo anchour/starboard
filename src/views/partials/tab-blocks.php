@@ -8,15 +8,17 @@
  * @var string $themeModifyDisabledReason Reason theme can't be modified
  */
 
+defined('ABSPATH') || exit;
+
 use Starboard\BlockLoader;
 use Starboard\BlockUsage;
 use Starboard\TextImageVariants;
 
 $customVariants = TextImageVariants::getVariants();
-$editSlug = $_GET['edit'] ?? null;
+$editSlug = isset($_GET['edit']) ? sanitize_title($_GET['edit']) : null;
 $editVariant = $editSlug ? TextImageVariants::getVariant($editSlug) : null;
 $isAdding = isset($_GET['add']);
-$openBlock = $_GET['block'] ?? null;
+$openBlock = isset($_GET['block']) ? sanitize_title($_GET['block']) : null;
 
 // Get usage data
 $refreshUsage = isset($_GET['refresh_usage']);

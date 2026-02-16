@@ -2,6 +2,8 @@
 /**
  * Text/Image Variant Add/Edit Form
  */
+
+defined('ABSPATH') || exit;
 ?>
 <style>
 	.starboard-variant-form {

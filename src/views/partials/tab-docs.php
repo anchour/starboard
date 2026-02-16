@@ -3,6 +3,8 @@
  * Documentation tab content.
  */
 
+defined('ABSPATH') || exit;
+
 $docsPath = STARBOARD_PLUGIN_PATH . 'CUSTOMIZATION.md';
 $docsContent = file_exists($docsPath) ? file_get_contents($docsPath) : 'Documentation file not found.';
 
@@ -54,8 +56,12 @@ function starboard_parse_markdown($text) {
 	$text = preg_replace('/\*\*([^*]+)\*\*/', '<strong>$1</strong>', $text);
 	$text = preg_replace('/__([^_]+)__/', '<strong>$1</strong>', $text);
 
-	// Links [text](url)
-	$text = preg_replace('/\[([^\]]+)\]\(([^)]+)\)/', '<a href="$2">$1</a>', $text);
+	// Links [text](url) - use callback to properly escape URLs
+	$text = preg_replace_callback('/\[([^\]]+)\]\(([^)]+)\)/', function($matches) {
+		$linkText = $matches[1]; // Already escaped via htmlspecialchars above
+		$url = esc_url($matches[2]); // Sanitize URL to prevent javascript: and other XSS
+		return '<a href="' . $url . '">' . $linkText . '</a>';
+	}, $text);
 
 	// Horizontal rules
 	$text = preg_replace('/^---+$/m', '<hr>', $text);

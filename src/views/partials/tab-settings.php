@@ -6,6 +6,8 @@
  * @var string $currentUserEmail Current user's email
  * @var bool $isAnchourUser Whether current user is an Anchour user
  */
+
+defined('ABSPATH') || exit;
 ?>
 
 <?php if (isset($_GET['imported'])) : ?>

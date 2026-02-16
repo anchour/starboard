@@ -8,6 +8,8 @@
  * @var array $savedSupports Saved support configurations
  */
 
+defined('ABSPATH') || exit;
+
 use Starboard\BlockLoader;
 use Starboard\BlockSupports;
 ?>
