@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "starboard/text-image-column",
+  "title": "Text/Image Column",
+  "category": "starboard",
+  "description": "A column for the Text/Image Split block.",
+  "parent": ["starboard/text-image"],
+  "textdomain": "starboard",
+  "supports": {
+    "reusable": false,
+    "html": false,
+    "inserter": false
+  },
+  "attributes": {
+    "columnType": {
+      "type": "string",
+      "default": "copy"
+    }
+  }
+}

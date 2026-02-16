@@ -1,0 +1,149 @@
+/**
+ * Text/Image Split Block - Editor Styles
+ *
+ * Override frontend styles that use media queries - we want grid in editor always
+ */
+
+/* Override the frontend flex layout - force block-row to not interfere */
+.wp-block-starboard-text-image > .block-row {
+  display: block !important;
+  flex-direction: unset !important;
+}
+
+/* Apply grid to the actual inner blocks container */
+.wp-block-starboard-text-image > .block-row > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: grid !important;
+  grid-template-columns: repeat(12, 1fr) !important;
+  gap: 2rem !important;
+}
+
+/* Column base - must fill grid cell */
+.wp-block-starboard-text-image .wp-block-starboard-text-image-column {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-row: 1 !important;
+}
+
+/* =====================================================
+   NARROW CONTENT (4/5) - Copy Left
+   ===================================================== */
+.wp-block-starboard-text-image.text-image__narrow-content.split-copy-left .text-image__copy-side {
+  grid-column: 1 / 6 !important;
+}
+.wp-block-starboard-text-image.text-image__narrow-content.split-copy-left .text-image__img-side {
+  grid-column: 7 / 13 !important;
+}
+
+/* NARROW CONTENT - Copy Right */
+.wp-block-starboard-text-image.text-image__narrow-content.split-copy-right .text-image__copy-side {
+  grid-column: 8 / 13 !important;
+}
+.wp-block-starboard-text-image.text-image__narrow-content.split-copy-right .text-image__img-side {
+  grid-column: 1 / 7 !important;
+  order: -1 !important;
+}
+
+/* =====================================================
+   WIDE IMAGE (4/7) - Copy Left
+   ===================================================== */
+.wp-block-starboard-text-image.text-image__wide-image.split-copy-left .text-image__copy-side {
+  grid-column: 1 / 5 !important;
+}
+.wp-block-starboard-text-image.text-image__wide-image.split-copy-left .text-image__img-side {
+  grid-column: 6 / 13 !important;
+}
+
+/* WIDE IMAGE - Copy Right */
+.wp-block-starboard-text-image.text-image__wide-image.split-copy-right .text-image__copy-side {
+  grid-column: 9 / 13 !important;
+}
+.wp-block-starboard-text-image.text-image__wide-image.split-copy-right .text-image__img-side {
+  grid-column: 1 / 8 !important;
+  order: -1 !important;
+}
+
+/* =====================================================
+   BALANCED (6/5) - Copy Left
+   ===================================================== */
+.wp-block-starboard-text-image.text-image__balanced.split-copy-left .text-image__copy-side {
+  grid-column: 1 / 7 !important;
+}
+.wp-block-starboard-text-image.text-image__balanced.split-copy-left .text-image__img-side {
+  grid-column: 8 / 13 !important;
+}
+
+/* BALANCED - Copy Right */
+.wp-block-starboard-text-image.text-image__balanced.split-copy-right .text-image__copy-side {
+  grid-column: 7 / 13 !important;
+}
+.wp-block-starboard-text-image.text-image__balanced.split-copy-right .text-image__img-side {
+  grid-column: 1 / 6 !important;
+  order: -1 !important;
+}
+
+/* =====================================================
+   Vertical alignment
+   ===================================================== */
+.wp-block-starboard-text-image.items-aligned-top > .block-row > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  align-items: start !important;
+}
+.wp-block-starboard-text-image.items-aligned-center > .block-row > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  align-items: center !important;
+}
+.wp-block-starboard-text-image.items-aligned-bottom > .block-row > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  align-items: end !important;
+}
+
+/* =====================================================
+   Image styles
+   ===================================================== */
+.wp-block-starboard-text-image .text-image__img-side .wp-block-image {
+  margin: 0 !important;
+  width: 100% !important;
+}
+.wp-block-starboard-text-image .text-image__img-side .wp-block-image img {
+  width: 100% !important;
+  height: auto !important;
+}
+.wp-block-starboard-text-image .text-image__img-side .components-placeholder {
+  min-height: 200px;
+}
+
+/* =====================================================
+   Variation picker
+   ===================================================== */
+.wp-block-starboard-text-image .block-editor-block-variation-picker {
+  padding: 2rem;
+}
+.wp-block-starboard-text-image .block-editor-block-variation-picker__variations {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* =====================================================
+   Breakpoint controls (spacing panel)
+   ===================================================== */
+.breakpoint-controls {
+  border: 1px solid black;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+}
+.breakpoint-controls .components-base-control {
+  margin-bottom: 0 !important;
+}
+.breakpoint-controls .breakpoint-controls__header {
+  flex: 1;
+}
+.breakpoint-controls .breakpoint-controls__header-description {
+  font-size: 10px;
+  display: block;
+}
+.breakpoint-controls .components-range-control {
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+.breakpoint-controls .components-base-control__help {
+  font-size: 10px;
+  text-align: right;
+}

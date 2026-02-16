@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "starboard/faq",
+  "title": "FAQ",
+  "description": "FAQ wrapper",
+  "icon": "list-view",
+  "category": "common",
+  "keywords": ["faq", "toggle", "details", "accordion"],
+  "supports": {
+    "anchor": true,
+    "html": false,
+    "color": {
+      "text": false,
+      "background": false
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "schema": {
+      "type": "object",
+      "default": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": []
+      }
+    },
+    "spacing": {
+      "type": "object",
+      "default": {
+        "Default": {
+          "active": false,
+          "settings": {
+            "paddingTop": 16,
+            "paddingBottom": 16
+          }
+        },
+        "md": {
+          "active": false,
+          "settings": {
+            "paddingTop": 18,
+            "paddingBottom": 18
+          }
+        },
+        "lg": {
+          "active": false,
+          "settings": {
+            "paddingTop": 20,
+            "paddingBottom": 20
+          }
+        },
+        "xl": {
+          "active": false,
+          "settings": {
+            "paddingTop": 24,
+            "paddingBottom": 24
+          }
+        }
+      }
+    }
+  }
+}

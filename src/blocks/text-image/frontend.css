@@ -1,0 +1,145 @@
+/**
+ * Text/Image Split Block - Frontend Styles
+ *
+ * Grid positioning is controlled via CSS custom properties
+ * set inline on the block element by edit.js/save.js
+ */
+
+.wp-block-starboard-text-image {
+  position: relative;
+
+  /* Spacing via CSS vars */
+  padding-top: var(--padding-top, 4rem);
+  padding-bottom: var(--padding-bottom, 4rem);
+}
+
+@media (min-width: 768px) {
+  .wp-block-starboard-text-image {
+    padding-top: var(--md-padding-top, var(--padding-top, 4rem));
+    padding-bottom: var(--md-padding-bottom, var(--padding-bottom, 4rem));
+  }
+}
+
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image {
+    padding-top: var(--lg-padding-top, var(--md-padding-top, var(--padding-top, 5rem)));
+    padding-bottom: var(--lg-padding-bottom, var(--md-padding-bottom, var(--padding-bottom, 5rem)));
+  }
+}
+
+@media (min-width: 1280px) {
+  .wp-block-starboard-text-image {
+    padding-top: var(--xl-padding-top, var(--lg-padding-top, var(--md-padding-top, var(--padding-top, 6rem))));
+    padding-bottom: var(--xl-padding-bottom, var(--lg-padding-bottom, var(--md-padding-bottom, var(--padding-bottom, 6rem))));
+  }
+}
+
+/* Block row container */
+.wp-block-starboard-text-image > .block-row {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image > .block-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    gap: var(--gutter, 2rem);
+  }
+
+  .wp-block-starboard-text-image > .block-row > * {
+    padding-left: 0;
+  }
+}
+
+/* Vertical alignment */
+.wp-block-starboard-text-image.items-aligned-top > .block-row {
+  align-items: flex-start;
+}
+
+.wp-block-starboard-text-image.items-aligned-center > .block-row {
+  align-items: center;
+}
+
+.wp-block-starboard-text-image.items-aligned-bottom > .block-row {
+  align-items: flex-end;
+}
+
+/* Column base styles */
+.wp-block-starboard-text-image-column {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image-column {
+    grid-row: 1;
+  }
+}
+
+/* Copy side positioning */
+.wp-block-starboard-text-image .text-image__copy-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image .text-image__copy-side {
+    grid-column-start: var(--lg-copy-start, 1);
+    grid-column-end: span var(--lg-copy-span, 6);
+  }
+}
+
+@media (min-width: 1280px) {
+  .wp-block-starboard-text-image .text-image__copy-side {
+    grid-column-start: var(--xl-copy-start, var(--lg-copy-start, 1));
+    grid-column-end: span var(--xl-copy-span, var(--lg-copy-span, 6));
+  }
+}
+
+/* Image side positioning */
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image .text-image__img-side {
+    grid-column-start: var(--lg-img-start, 7);
+    grid-column-end: span var(--lg-img-span, 6);
+  }
+}
+
+@media (min-width: 1280px) {
+  .wp-block-starboard-text-image .text-image__img-side {
+    grid-column-start: var(--xl-img-start, var(--lg-img-start, 7));
+    grid-column-end: span var(--xl-img-span, var(--lg-img-span, 6));
+  }
+}
+
+/* Image side content */
+.wp-block-starboard-text-image .text-image__img-side figure {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.wp-block-starboard-text-image .text-image__img-side figure > img,
+.wp-block-starboard-text-image .text-image__img-side figure > video {
+  width: 100%;
+  height: auto;
+}
+
+/* Copy-right: use order to flip visual order (DOM stays copy-first) */
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image.split-copy-right > .block-row .text-image__img-side {
+    order: -1;
+  }
+}
+
+/* Mobile image position */
+.wp-block-starboard-text-image.image-btm-mobile > .block-row {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 1024px) {
+  .wp-block-starboard-text-image.image-btm-mobile > .block-row {
+    flex-direction: unset;
+  }
+}

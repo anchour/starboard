@@ -1,0 +1,455 @@
+/**
+ * Starboard Admin Styles
+ */
+
+/* ==========================================================================
+   Common Components
+   ========================================================================== */
+
+.starboard-note {
+	background: #f0f6fc;
+	border-left: 4px solid #72aee6;
+	padding: 12px;
+	margin-bottom: 20px;
+}
+
+.starboard-badge {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 400;
+	padding: 2px 8px;
+	border-radius: 2px;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+.starboard-badge-override {
+	background: #dba617;
+	color: #fff;
+}
+
+.starboard-badge-custom,
+.starboard-badge-default {
+	background: #2271b1;
+	color: #fff;
+}
+
+/* ==========================================================================
+   Blocks Tab
+   ========================================================================== */
+
+.starboard-block-panel {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	margin-bottom: 12px;
+}
+
+.starboard-block-header {
+	padding: 12px 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #f6f7f7;
+	border-bottom: 1px solid #c3c4c7;
+	cursor: pointer;
+}
+
+.starboard-block-header:hover {
+	background: #f0f0f1;
+}
+
+.starboard-block-header-left {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.starboard-block-header h3 {
+	margin: 0;
+	font-size: 14px;
+}
+
+.starboard-block-header .dashicons {
+	transition: transform 0.2s;
+	color: #646970;
+}
+
+.starboard-block-panel.is-open .starboard-block-header .dashicons-arrow-down-alt2 {
+	transform: rotate(180deg);
+}
+
+.starboard-block-content {
+	display: none;
+	padding: 16px;
+	border-top: none;
+}
+
+.starboard-block-panel.is-open .starboard-block-content {
+	display: block;
+}
+
+.starboard-block-panel.is-disabled .starboard-block-header {
+	background: #fafafa;
+}
+
+.starboard-block-panel.is-disabled .starboard-block-header h3 {
+	color: #a0a5aa;
+}
+
+.starboard-block-description {
+	color: #646970;
+	font-size: 13px;
+	margin: 0 0 16px 0;
+}
+
+.starboard-settings-section {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid #e0e0e0;
+}
+
+.starboard-settings-section h4 {
+	margin: 0 0 8px 0;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+/* Variants List */
+.starboard-variants-list {
+	border: 1px solid #e0e0e0;
+	margin-top: 12px;
+}
+
+.starboard-variant-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	border-bottom: 1px solid #f0f0f1;
+	background: #fafafa;
+}
+
+.starboard-variant-item:last-child {
+	border-bottom: none;
+}
+
+.starboard-variant-info h4 {
+	margin: 0 0 4px 0;
+	font-size: 13px;
+}
+
+.starboard-variant-info p {
+	margin: 0;
+	color: #646970;
+	font-size: 12px;
+}
+
+.starboard-variant-actions {
+	display: flex;
+	gap: 8px;
+}
+
+/* Usage badges */
+.starboard-usage-badge {
+	display: inline-block;
+	background: #dba617;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 500;
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.starboard-usage-badge-small {
+	font-size: 10px;
+	padding: 1px 6px;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+/* Usage info section */
+.starboard-usage-info {
+	background: #f6f7f7;
+	border-left: 3px solid #dba617;
+	padding: 8px 12px;
+	margin-bottom: 16px;
+	font-size: 13px;
+	color: #50575e;
+}
+
+/* ==========================================================================
+   Block Supports Tab
+   ========================================================================== */
+
+.starboard-supports-block {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	margin-bottom: 16px;
+}
+
+.starboard-supports-header {
+	padding: 16px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #f6f7f7;
+	border-bottom: 1px solid #c3c4c7;
+}
+
+.starboard-supports-header:hover {
+	background: #f0f0f1;
+}
+
+.starboard-supports-header h3 {
+	margin: 0;
+	font-size: 14px;
+}
+
+.starboard-supports-header .dashicons {
+	transition: transform 0.2s;
+}
+
+.starboard-supports-block.is-open .starboard-supports-header .dashicons {
+	transform: rotate(180deg);
+}
+
+.starboard-supports-content {
+	display: none;
+	padding: 16px;
+}
+
+.starboard-supports-block.is-open .starboard-supports-content {
+	display: block;
+}
+
+/* Category sections */
+.starboard-category {
+	margin-bottom: 24px;
+}
+
+.starboard-category-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 12px 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.starboard-category h4 {
+	margin: 0;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #646970;
+}
+
+.starboard-category-actions {
+	display: flex;
+	gap: 8px;
+}
+
+.starboard-category-actions button {
+	font-size: 11px;
+	padding: 2px 8px;
+	cursor: pointer;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	color: #50575e;
+}
+
+.starboard-category-actions button:hover {
+	background: #f0f0f1;
+	border-color: #8c8f94;
+	color: #1d2327;
+}
+
+/* Support rows */
+.starboard-support-row {
+	display: flex;
+	align-items: flex-start;
+	padding: 8px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.starboard-support-row:last-child {
+	border-bottom: none;
+}
+
+.starboard-support-label {
+	flex: 0 0 200px;
+	font-weight: 500;
+}
+
+.starboard-support-control {
+	flex: 0 0 150px;
+}
+
+.starboard-support-control select {
+	width: 100%;
+}
+
+.starboard-support-desc {
+	flex: 1;
+	color: #646970;
+	font-size: 12px;
+	padding-left: 16px;
+}
+
+.starboard-supports-actions {
+	display: flex;
+	gap: 8px;
+	padding-top: 16px;
+	border-top: 1px solid #e0e0e0;
+	margin-top: 16px;
+}
+
+/* Supports tab badge override */
+.starboard-supports-block .starboard-badge {
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Documentation Tab
+   ========================================================================== */
+
+.starboard-docs {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	padding: 24px 32px;
+	max-width: 900px;
+}
+
+.starboard-docs h1 {
+	font-size: 24px;
+	margin: 0 0 16px 0;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #2271b1;
+}
+
+.starboard-docs h2 {
+	font-size: 20px;
+	margin: 32px 0 16px 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.starboard-docs h3 {
+	font-size: 16px;
+	margin: 24px 0 12px 0;
+}
+
+.starboard-docs p {
+	line-height: 1.6;
+	margin: 0 0 16px 0;
+}
+
+.starboard-docs pre {
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	padding: 16px;
+	overflow-x: auto;
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 16px 0;
+}
+
+.starboard-docs code {
+	background: #f0f0f1;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-size: 13px;
+}
+
+.starboard-docs pre code {
+	background: none;
+	padding: 0;
+	border-radius: 0;
+}
+
+.starboard-docs ul {
+	margin: 0 0 16px 0;
+	padding-left: 24px;
+}
+
+.starboard-docs li {
+	margin-bottom: 8px;
+	line-height: 1.5;
+}
+
+.starboard-docs hr {
+	border: none;
+	border-top: 1px solid #c3c4c7;
+	margin: 32px 0;
+}
+
+.starboard-docs table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 16px 0;
+}
+
+.starboard-docs th,
+.starboard-docs td {
+	border: 1px solid #c3c4c7;
+	padding: 8px 12px;
+	text-align: left;
+}
+
+.starboard-docs th {
+	background: #f6f7f7;
+}
+
+/* ==========================================================================
+   Settings Tab
+   ========================================================================== */
+
+.starboard-settings-box {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	padding: 24px;
+	max-width: 600px;
+}
+
+.starboard-settings-box h3 {
+	margin-top: 0;
+}
+
+.starboard-user-info {
+	margin-top: 24px;
+	padding: 16px;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	max-width: 600px;
+}
+
+.starboard-export-import {
+	margin-top: 32px;
+	max-width: 600px;
+}
+
+.starboard-export-import h2 {
+	margin-bottom: 16px;
+}
+
+.starboard-export-import-grid {
+	display: flex;
+	gap: 24px;
+}
+
+.starboard-export-box,
+.starboard-import-box {
+	flex: 1;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	padding: 20px;
+}
+
+.starboard-export-box h3,
+.starboard-import-box h3 {
+	margin-top: 0;
+}
